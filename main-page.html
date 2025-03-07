@@ -58,9 +58,24 @@
   <div class="holi-message">Happy Holi! Everyone from <br>
     your Lumos 
   </div>
+<!-- Add audio element -->
+<audio id="backgroundMusic" loop>
+  <source src="holi-music.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
 
-  <script src="script.js"></script>
-  <script>
+<script src="script.js"></script>
+<script>
+  // Get the audio element
+  const backgroundMusic = document.getElementById('backgroundMusic');
+  
+  // Play music when page loads
+  window.addEventListener('load', () => {
+      backgroundMusic.play().catch(error => {
+          console.log("Audio autoplay failed:", error);
+      });
+  });
+  
     // Add a button click effect
     document.addEventListener('click', () => 
     {
