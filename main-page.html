@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Holi!</title>
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+  <style>
+    html, body 
+    {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      color: #fff;
+    }
+
+    body 
+    {
+      background: url(http://www.nhembram.com/images/happy_holi.jpg) no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    canvas 
+    {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0.5;
+      opacity: 1;
+    }
+
+    .holi-message 
+    {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 70px;
+      font-family: 'Great Vibes', cursive;
+      z-index: 1;
+      opacity: 0;
+      animation: messageAnimation 2s ease-in-out forwards;
+    }
+
+    @keyframes messageAnimation 
+    {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <canvas></canvas>
+  <div class="holi-message">Happy Holi! Everyone from <br>
+    your Lumos 
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Add a button click effect
+    document.addEventListener('click', () => 
+    {
+      const holiMessage = document.querySelector('.holi-message');
+      holiMessage.style.opacity = 1;
+    });
+  </script>
+</body>
+</html>
